@@ -42,10 +42,10 @@ footer {
   margin-top: 72px;
   text-align: center;
   font-size: .6em;
+}
 
-  a, a:hover, a:active, a:visited {
-    color: white;
-  }
+a, a:hover, a:active, a:visited {
+  color: white;
 }
 
 // modules
@@ -56,9 +56,20 @@ footer {
   font-size: 1.5em;
   line-height: 1.5em;
   @include text-shadow(1px 1px $dark_red);
+  margin-bottom: 72px;
 
   .twitter-share-button {
     margin-left: 20px;
+  }
+}
+
+.ad {
+  clear: right;
+
+  img {
+    float: left;
+    height: 144px;
+    margin-right: 20px;
   }
 }
 
