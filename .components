@@ -1,0 +1,8 @@
+---
+:orm: datamapper
+:test: cucumber
+:mock: none
+:script: jquery
+:renderer: haml
+:stylesheet: none
+:namespace: ConferenceSite2013
