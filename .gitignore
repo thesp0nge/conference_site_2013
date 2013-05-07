@@ -1,3 +1,5 @@
+*.db
+*.sw?
 *.gem
 *.rbc
 .bundle
