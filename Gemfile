@@ -13,6 +13,7 @@ source 'https://rubygems.org'
 # Project requirements
 gem 'rake'
 gem 'sass'
+gem 'compass'
 
 # Component requirements
 gem 'haml', '> 4.0.0'
