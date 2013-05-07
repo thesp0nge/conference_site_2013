@@ -6,3 +6,4 @@
 :renderer: haml
 :stylesheet: none
 :namespace: ConferenceSite2013
+:admin_renderer: haml

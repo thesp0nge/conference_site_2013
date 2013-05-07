@@ -16,6 +16,7 @@ gem 'sass'
 gem 'compass'
 
 # Component requirements
+gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'haml', '> 4.0.0'
 gem 'dm-sqlite-adapter'
 gem 'data_mapper'
