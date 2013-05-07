@@ -15,7 +15,7 @@ gem 'rake'
 gem 'sass'
 
 # Component requirements
-gem 'haml'
+gem 'haml', '> 4.0.0'
 gem 'dm-sqlite-adapter'
 gem 'data_mapper'
 
