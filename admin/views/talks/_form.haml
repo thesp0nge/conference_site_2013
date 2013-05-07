@@ -1,0 +1,37 @@
+- error = @talk.errors.key?(:title) && @talk.errors[:title].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :title, :class => 'control-label'
+  .controls
+    =f.text_field :title, :class => 'input-xlarge input-with-feedback', :autofocus => true
+    %span.help-inline=error ? f.error_message_on(:title, :class => 'text-error') : pat(:example)
+- error = @talk.errors.key?(:abstract) && @talk.errors[:abstract].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :abstract, :class => 'control-label'
+  .controls
+    =f.text_area :abstract, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:abstract, :class => 'text-error') : pat(:example)
+- error = @talk.errors.key?(:slides) && @talk.errors[:slides].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :slides, :class => 'control-label'
+  .controls
+    =f.text_field :slides, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:slides, :class => 'text-error') : pat(:example)
+- error = @talk.errors.key?(:speaker_id) && @talk.errors[:speaker_id].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :speaker_id, :class => 'control-label'
+  .controls
+    =f.text_field :speaker_id, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:speaker_id, :class => 'text-error') : pat(:example)
+- error = @talk.errors.key?(:slot_id) && @talk.errors[:slot_id].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :slot_id, :class => 'control-label'
+  .controls
+    =f.text_field :slot_id, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:slot_id, :class => 'text-error') : pat(:example)
+
+.form-actions
+  =f.submit pat(:save), :class => 'btn btn-primary'
+  &nbsp;
+  =f.submit pat(:save_and_continue), :class => 'btn btn-info', :name => 'save_and_continue'
+  &nbsp;
+  =link_to pat(:cancel), url(:talks, :index), :class => 'btn'

@@ -1,0 +1,31 @@
+- error = @speaker.errors.key?(:name) && @speaker.errors[:name].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :name, :class => 'control-label'
+  .controls
+    =f.text_field :name, :class => 'input-xlarge input-with-feedback', :autofocus => true
+    %span.help-inline=error ? f.error_message_on(:name, :class => 'text-error') : pat(:example)
+- error = @speaker.errors.key?(:github) && @speaker.errors[:github].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :github, :class => 'control-label'
+  .controls
+    =f.text_field :github, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:github, :class => 'text-error') : pat(:example)
+- error = @speaker.errors.key?(:twitter) && @speaker.errors[:twitter].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :twitter, :class => 'control-label'
+  .controls
+    =f.text_field :twitter, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:twitter, :class => 'text-error') : pat(:example)
+- error = @speaker.errors.key?(:url) && @speaker.errors[:url].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :url, :class => 'control-label'
+  .controls
+    =f.text_field :url, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:url, :class => 'text-error') : pat(:example)
+
+.form-actions
+  =f.submit pat(:save), :class => 'btn btn-primary'
+  &nbsp;
+  =f.submit pat(:save_and_continue), :class => 'btn btn-info', :name => 'save_and_continue'
+  &nbsp;
+  =link_to pat(:cancel), url(:speakers, :index), :class => 'btn'

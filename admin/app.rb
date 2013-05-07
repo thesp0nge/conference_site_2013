@@ -33,6 +33,9 @@ module ConferenceSite2013
     end
 
     access_control.roles_for :admin do |role|
+    role.project_module :slots, '/slots'
+    role.project_module :talks, '/talks'
+    role.project_module :speakers, '/speakers'
     role.project_module :users, '/users'
     end
 
