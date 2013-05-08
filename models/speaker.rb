@@ -1,4 +1,5 @@
 require 'data_mapper'
+require 'uri'
 
 class Speaker
   include DataMapper::Resource
@@ -14,7 +15,16 @@ class Speaker
 
   has n, :talks
 
-  def github=(args)
-    instance_variable_set(:@github, "https://github.com/#{args}")
+  def github=(username)
+    github_url =  "https://github.com/#{username}"
+    begin
+      uri = URI(username)
+
+      instance_variable_set(:@github, "#{username}")    if uri.host == "github.com"
+      instance_variable_set(:@github, "#{github_url}")  if uri.host.nil?
+      instance_variable_set(:@github, "")               if uri.host != "github.com" and ! uri.host.nil?
+    rescue
+      instance_variable_set(:@github, "") 
+    end
   end
 end
