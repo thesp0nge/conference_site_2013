@@ -13,4 +13,8 @@ class Speaker
   property :updated_at, DateTime, :default=>Time.now
 
   has n, :talks
+
+  def github=(args)
+    instance_variable_set(:@github, "https://github.com/#{args}")
+  end
 end

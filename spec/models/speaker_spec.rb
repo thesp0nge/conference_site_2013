@@ -7,6 +7,6 @@ describe "A RubyDay 2013 speaker" do
   end
 
   it "will have github link to be created for free" do
-
+    speaker.github.should   == "https://github.com/johnny"
   end
 end
