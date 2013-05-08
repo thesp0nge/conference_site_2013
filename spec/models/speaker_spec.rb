@@ -22,4 +22,22 @@ describe "A RubyDay 2013 speaker" do
       speaker.github.should   == ""
     end
   end
+
+  context "will have a twitter link" do
+
+    it "created for free" do
+      speaker.twitter.should   == "https://twitter.com/johnny"
+    end
+
+    it "saved as is if filled with the whole twitter link" do
+      speaker.twitter="https://twitter.com/thesp0nge"
+      speaker.twitter.should   == "https://twitter.com/thesp0nge"
+    end
+
+    it "discarded if if filled with rubbish" do
+      speaker.twitter="http://www.google.com"
+      speaker.twitter.should   == ""
+    end
+  end
+
 end
