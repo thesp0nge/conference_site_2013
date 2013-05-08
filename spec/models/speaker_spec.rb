@@ -6,17 +6,20 @@ describe "A RubyDay 2013 speaker" do
     speaker.valid?.should   be_true
   end
 
-  it "will have github link to be created for free" do
-    speaker.github.should   == "https://github.com/johnny"
-  end
+  context "will have a github link" do
 
-  it "if filled with the whole github link it will save it" do
-    speaker.github="https://github.com/thesp0nge"
-    speaker.github.should   == "https://github.com/thesp0nge"
-  end
+    it "created for free" do
+      speaker.github.should   == "https://github.com/johnny"
+    end
 
-  it "if filled with rubbish, github link is discarded" do
-    speaker.github="http://www.google.com"
-    speaker.github.should   == ""
+    it "saved as is if filled with the whole github link" do
+      speaker.github="https://github.com/thesp0nge"
+      speaker.github.should   == "https://github.com/thesp0nge"
+    end
+
+    it "discarded if if filled with rubbish" do
+      speaker.github="http://www.google.com"
+      speaker.github.should   == ""
+    end
   end
 end
