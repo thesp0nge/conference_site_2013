@@ -16,14 +16,23 @@ class Speaker
   has n, :talks
 
 
+  def url=(url)
+    begin
+      uri = URI(url)
+      instance_variable_set(:@url, url)
+    rescue
+      instance_variable_set(:@url, "")
+    end
+  end
+
   def twitter=(username)
     twitter_url =  "https://twitter.com/#{username}"
     begin
       uri = URI(username)
 
-      instance_variable_set(:@twitter, "#{username}")    if uri.host == "twitter.com"
+      instance_variable_set(:@twitter, "#{username}")     if uri.host == "twitter.com"
       instance_variable_set(:@twitter, "#{twitter_url}")  if uri.host.nil?
-      instance_variable_set(:@twitter, "")               if uri.host != "twitter.com" and ! uri.host.nil?
+      instance_variable_set(:@twitter, "")                if uri.host != "twitter.com" and ! uri.host.nil?
     rescue
       instance_variable_set(:@twitter, "") 
     end

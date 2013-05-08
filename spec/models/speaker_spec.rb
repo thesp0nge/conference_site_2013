@@ -40,4 +40,14 @@ describe "A RubyDay 2013 speaker" do
     end
   end
 
+  context "will have a personal link" do
+    it "that is sane" do
+      speaker.url.should == "http://www.johnny.com"
+    end
+    it "that is discarded if filled up with something that is not an url" do 
+      speaker.url = "a rubbish here"
+      speaker.url.should == ""
+    end
+  end
+
 end
