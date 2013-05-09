@@ -28,6 +28,7 @@
                       .btn.btn-small.cancel=pat(:cancel)
         %th.header= :id
         %th.header= :name
+        %th.header= :email
         %th.header= :github
         %th.header= :twitter
         %th.header= :url
@@ -42,6 +43,7 @@
             =check_box_tag 'speaker_ids[]', :value => speaker.id, :class => 'list-selectable-checkbox'
           %td.list-column=speaker.id
           %td.list-column=speaker.name
+          %td.list-column=speaker.email
           %td.list-column=speaker.github
           %td.list-column=speaker.twitter
           %td.list-column=speaker.url

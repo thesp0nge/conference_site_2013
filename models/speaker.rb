@@ -8,6 +8,7 @@ class Speaker
   property :name,    String
   property :github,  String
   property :twitter, String
+  property :email,     String
   property :url,     String
 
   property :created_at, DateTime, :default=>Time.now

@@ -4,6 +4,13 @@
   .controls
     =f.text_field :name, :class => 'input-xlarge input-with-feedback', :autofocus => true
     %span.help-inline=error ? f.error_message_on(:name, :class => 'text-error') : pat(:example)
+- error = @speaker.errors.key?(:email) && @speaker.errors[:email].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :email, :class => 'control-label'
+  .controls
+    =f.text_field :email, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:email, :class => 'text-error') : pat(:example)
+
 - error = @speaker.errors.key?(:github) && @speaker.errors[:github].count > 0
 %fieldset.control-group{:class => error ? 'has-error' : ''}
   =f.label :github, :class => 'control-label'
