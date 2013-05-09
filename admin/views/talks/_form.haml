@@ -18,15 +18,15 @@
     %span.help-inline=error ? f.error_message_on(:slides, :class => 'text-error') : pat(:example)
 - error = @talk.errors.key?(:speaker_id) && @talk.errors[:speaker_id].count > 0
 %fieldset.control-group{:class => error ? 'has-error' : ''}
-  =f.label :speaker_id, :class => 'control-label'
+  =f.label :speaker, :class => 'control-label'
   .controls
-    =f.text_field :speaker_id, :class => 'input-xlarge input-with-feedback'
+    =f.select :speaker_id, :options=>Speaker.all.map{|s| [s.name, s.id.to_i]}, :class => 'input-xlarge input-with-feedback'
     %span.help-inline=error ? f.error_message_on(:speaker_id, :class => 'text-error') : pat(:example)
 - error = @talk.errors.key?(:slot_id) && @talk.errors[:slot_id].count > 0
 %fieldset.control-group{:class => error ? 'has-error' : ''}
-  =f.label :slot_id, :class => 'control-label'
+  =f.label :slot, :class => 'control-label'
   .controls
-    =f.text_field :slot_id, :class => 'input-xlarge input-with-feedback'
+    =f.select :slot_id, :options=>Slot.talks.map{|s| [s.schedule.strftime("%H:%M"), s.id]}, :class => 'input-xlarge input-with-feedback'
     %span.help-inline=error ? f.error_message_on(:slot_id, :class => 'text-error') : pat(:example)
 
 .form-actions

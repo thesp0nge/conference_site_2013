@@ -30,8 +30,6 @@
         %th.header= :ordinal
         %th.header= :schedule
         %th.header= :type
-        %th.header= :created_at
-        %th.header= :updated_at
         %th.header.list-row-action-header
 
     %tbody
@@ -41,10 +39,8 @@
             =check_box_tag 'slot_ids[]', :value => slot.id, :class => 'list-selectable-checkbox'
           %td.list-column=slot.id
           %td.list-column=slot.ordinal
-          %td.list-column=slot.schedule
+          %td.list-column=slot.schedule.strftime("%H:%M - %d/%m")
           %td.list-column=slot.type
-          %td.list-column=slot.created_at
-          %td.list-column=slot.updated_at
           %td.list-column.list-row-action
             .list-row-action-wrapper
               =link_to tag_icon(:edit), :href => url(:slots, :edit, :id => slot.id), :rel => :tooltip, :title => "#{pat(:edit)} slot", :class => 'list-row-action-wrapper-link'

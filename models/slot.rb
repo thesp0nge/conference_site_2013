@@ -15,6 +15,15 @@ class Slot
   has 1, :talk
   before :create, :set_ordinal
 
+  def self.slots_kind
+    %w(coffee launch keynote lightning talk)
+  end
+
+  def self.talks
+    self.all({:type=>:talk, :talk=>nil})
+  end
+
+
   private
   def set_ordinal
     self.ordinal = Slot.count

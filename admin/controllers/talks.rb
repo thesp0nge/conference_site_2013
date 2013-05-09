@@ -12,6 +12,7 @@ ConferenceSite2013::Admin.controllers :talks do
   end
 
   post :create do
+    puts params[:talk]
     @talk = Talk.new(params[:talk])
     if @talk.save
       @title = pat(:create_title, :model => "talk #{@talk.id}")

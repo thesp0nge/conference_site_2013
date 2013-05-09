@@ -30,10 +30,8 @@
         %th.header= :title
         %th.header= :abstract
         %th.header= :slides
-        %th.header= :created_at
-        %th.header= :updated_at
-        %th.header= :speaker_id
-        %th.header= :slot_id
+        %th.header= :speaker
+        %th.header= :slot
         %th.header.list-row-action-header
 
     %tbody
@@ -45,10 +43,8 @@
           %td.list-column=talk.title
           %td.list-column=talk.abstract
           %td.list-column=talk.slides
-          %td.list-column=talk.created_at
-          %td.list-column=talk.updated_at
-          %td.list-column=talk.speaker_id
-          %td.list-column=talk.slot_id
+          %td.list-column=talk.speaker.name
+          %td.list-column=talk.slot.schedule.strftime("%H:%M")
           %td.list-column.list-row-action
             .list-row-action-wrapper
               =link_to tag_icon(:edit), :href => url(:talks, :edit, :id => talk.id), :rel => :tooltip, :title => "#{pat(:edit)} talk", :class => 'list-row-action-wrapper-link'

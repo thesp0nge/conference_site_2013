@@ -14,7 +14,7 @@
 %fieldset.control-group{:class => error ? 'has-error' : ''}
   =f.label :type, :class => 'control-label'
   .controls
-    =f.text_field :type, :class => 'input-xlarge input-with-feedback'
+    =f.select :type, :options=>Slot.slots_kind.map{|s| [s.capitalize, s]}, :class => 'input-xlarge input-with-feedback'
     %span.help-inline=error ? f.error_message_on(:type, :class => 'text-error') : pat(:example)
 
 .form-actions
