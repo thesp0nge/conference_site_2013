@@ -31,8 +31,8 @@
         %th.header= :github
         %th.header= :twitter
         %th.header= :url
-        %th.header= :created_at
-        %th.header= :updated_at
+        -# %th.header= :created_at
+        -# %th.header= :updated_at
         %th.header.list-row-action-header
 
     %tbody
@@ -45,8 +45,8 @@
           %td.list-column=speaker.github
           %td.list-column=speaker.twitter
           %td.list-column=speaker.url
-          %td.list-column=speaker.created_at
-          %td.list-column=speaker.updated_at
+          -# %td.list-column=speaker.created_at
+          -# %td.list-column=speaker.updated_at
           %td.list-column.list-row-action
             .list-row-action-wrapper
               =link_to tag_icon(:edit), :href => url(:speakers, :edit, :id => speaker.id), :rel => :tooltip, :title => "#{pat(:edit)} speaker", :class => 'list-row-action-wrapper-link'

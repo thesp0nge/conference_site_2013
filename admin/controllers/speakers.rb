@@ -40,6 +40,7 @@ ConferenceSite2013::Admin.controllers :speakers do
     @speaker = Speaker.get(params[:id].to_i)
     if @speaker
       if @speaker.update(params[:speaker])
+        puts @speaker.github
         flash[:success] = pat(:update_success, :model => 'Speaker', :id =>  "#{params[:id]}")
         params[:save_and_continue] ?
           redirect(url(:speakers, :index)) :

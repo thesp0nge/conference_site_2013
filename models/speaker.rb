@@ -15,39 +15,72 @@ class Speaker
 
   has n, :talks
 
+  before :save, :fix_urls
 
-  def url=(url)
+
+  private 
+  def fix_urls
+    fix_url
+    fix_github
+    fix_twitter
+  end
+
+  def fix_url
     begin
-      uri = URI(url)
-      instance_variable_set(:@url, url)
+      uri = URI(self.url)
     rescue
-      instance_variable_set(:@url, "")
+      self.url = ""
     end
   end
 
-  def twitter=(username)
-    twitter_url =  "https://twitter.com/#{username}"
+  def fix_github
+    github_url =  "https://github.com/#{self.github}"
     begin
-      uri = URI(username)
+      uri = URI(self.github)
 
-      instance_variable_set(:@twitter, "#{username}")     if uri.host == "twitter.com"
-      instance_variable_set(:@twitter, "#{twitter_url}")  if uri.host.nil?
-      instance_variable_set(:@twitter, "")                if uri.host != "twitter.com" and ! uri.host.nil?
+      self.github = github_url  if uri.host.nil?
+      self.github = ""          if uri.host != "github.com" and ! uri.host.nil?
     rescue
-      instance_variable_set(:@twitter, "") 
+      self.github = ""
     end
   end
 
-  def github=(username)
-    github_url =  "https://github.com/#{username}"
+  def fix_twitter
+    twitter_url =  "https://twitter.com/#{self.twitter}"
     begin
-      uri = URI(username)
+      uri = URI(self.twitter)
 
-      instance_variable_set(:@github, "#{username}")    if uri.host == "github.com"
-      instance_variable_set(:@github, "#{github_url}")  if uri.host.nil?
-      instance_variable_set(:@github, "")               if uri.host != "github.com" and ! uri.host.nil?
+      self.twitter = twitter_url if uri.host.nil?
+      self.twitter = ""          if uri.host != "twitter.com" and ! uri.host.nil?
     rescue
-      instance_variable_set(:@github, "") 
+      self.twitter = ""
     end
   end
+
+
+  # def twitter=(username)
+  #   twitter_url =  "https://twitter.com/#{username}"
+  #   begin
+  #     uri = URI(username)
+
+  #     instance_variable_set(:@twitter, "#{username}")     if uri.host == "twitter.com"
+  #     instance_variable_set(:@twitter, "#{twitter_url}")  if uri.host.nil?
+  #     instance_variable_set(:@twitter, "")                if uri.host != "twitter.com" and ! uri.host.nil?
+  #   rescue
+  #     instance_variable_set(:@twitter, "") 
+  #   end
+  # end
+
+  # def github=(username)
+  #   github_url =  "https://github.com/#{username}"
+  #   begin
+  #     uri = URI(username)
+
+  #     instance_variable_set(:@github, "#{username}")    if uri.host == "github.com"
+  #     instance_variable_set(:@github, "#{github_url}")  if uri.host.nil?
+  #     instance_variable_set(:@github, "")               if uri.host != "github.com" and ! uri.host.nil?
+  #   rescue
+  #     instance_variable_set(:@github, "") 
+  #   end
+  # end
 end
