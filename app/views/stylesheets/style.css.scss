@@ -6,14 +6,14 @@ $light_red: rgb(255,110,108);
 $dark_red: rgb(150,34,35);
 
 html {
-  background: black image_url('background.jpg') no-repeat center 80px;  
+  // background: black image_url('background.jpg') no-repeat center 80px;  
 }
 
 body {
   background: transparent;
   width: 960px;
   margin: 0 auto;
-  color: white;
+  color: black;
   font-family: "futura-pt", sans-serif;
   font-size: 16px;
   line-height: 1.7em;
@@ -45,7 +45,7 @@ footer {
 }
 
 a, a:hover, a:active, a:visited {
-  color: white;
+  color: #780f14;
 }
 
 // modules
@@ -104,7 +104,7 @@ a, a:hover, a:active, a:visited {
 }
 
 .button {
-  color: white;
+  color: black;
   text-align: center;
   text-decoration: none;
   @include text-shadow(0 -1px grey);
@@ -155,7 +155,7 @@ input[type=email].email {
 .button:hover {
   @include background(linear-gradient(top, $dark_red, $light_red)); 
   text-decoration: none;
-  color: white; 
+  color: black; 
 }
 
 .button:active {

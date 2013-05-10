@@ -19,12 +19,15 @@ ConferenceSite2013::App.controllers :root do
   # end
   
   get :index, :map=>'/' do
-    haml :'index.html'
+    render 'root/index'
+  end
+  get :old, :map=>'/old' do
+    render 'root/old'
   end
 
-  get :css, :map=>'/stylesheets/:name.css' do
+  get :css, :map=>'/stylesheets/style.css' do
     content_type 'text/css'
-    scss :"stylesheets/#{params[:name]}.css"
+    scss :"stylesheets/style.css"
   end
 
 

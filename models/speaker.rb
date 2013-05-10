@@ -1,5 +1,6 @@
 require 'data_mapper'
 require 'uri'
+require 'digest/md5'
 
 class Speaker
   include DataMapper::Resource
@@ -18,6 +19,12 @@ class Speaker
 
   before :save, :fix_urls
 
+
+  def gravatar_url
+    return "" if self.email.nil? or self.email.empty?
+    hash = Digest::MD5.hexdigest(self.email.downcase)
+    "http://www.gravatar.com/avatar/#{hash}"
+  end
 
   private 
   def fix_urls
