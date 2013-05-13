@@ -10,9 +10,7 @@ rubyday13 website draft
 
 * backend - talks - index: change slot and speaker ids with the object title value
 * backend - all - index: remove created and updated timestamps 
-* backend - footer: review social links (do we have a blog???)
 * backend: add sponsor page
-* backend - header: nav background must be dark
 * backend - slot - edit: improve schedule input type with some datetime magic
 * backend - talks - new: you can insert only talks... keynotes are speakerless... must modified in case of need
 
