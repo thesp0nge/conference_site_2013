@@ -349,6 +349,7 @@ footer p {
     margin: 10px 0 0 15px;
 }
 
+.navbar .nav > li > a, .navbar .nav > li > a:hover, .navbar .nav > li > a:focus, 
 .navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus {
     background-color: black;
     color: white;
@@ -356,7 +357,14 @@ footer p {
     font-size: 1.3em;
 }
 
+.navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.navbar .nav > li > a:hover,
 .navbar .nav > .active > a:hover {
+    color: white;
     text-decoration: underline;
 }
 /* -- End Application -- */
