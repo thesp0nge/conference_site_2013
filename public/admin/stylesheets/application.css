@@ -367,4 +367,39 @@ footer p {
     color: white;
     text-decoration: underline;
 }
+
+body {
+    background: url('/images/debut_light.png');
+}
+
+.container.main {
+    box-shadow: #999 0 0 3px;
+    border-left: #ccc solid 1px;
+    border-right: #ccc solid 1px;
+    padding: 20px 40px;
+    background: rgba(255,255,255,0.6);
+}
+
+.sponsor {
+    color: #DC4A43;
+    font-weight: bold;
+    border-bottom: #DC4A43 dashed 1px;
+    display: inline-block;
+    margin-top: 40px;
+}
+
+.media > .pull-left {
+    margin-right: 20px;
+}
+
+.sponsor-logo {
+    padding: 10px;
+    background: white;
+    border: #DCA1A1 solid 1px;
+}
+
+.sponsor-logo:hover, .sponsor-logo:focus {
+    border-color: #DC4A43;
+}
+
 /* -- End Application -- */
