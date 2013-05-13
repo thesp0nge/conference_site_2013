@@ -20,7 +20,7 @@
 
           %ul.nav.pull-left
             %li{:class => "navbar-module #{('active' if request.path_info =~ /^\//)}"}
-              =link_to 'home', ConferenceSite2013::App.url(:root, :index)
+              =link_to 'Home', ConferenceSite2013::App.url(:root, :index)
 
     .container.main
       .main-wrapper
@@ -35,8 +35,7 @@
           =Time.now.year
           rubyday.it 
         %ul.pull-right.footer-links
-          %li= link_to tag_icon(:home, 'web'), 'http://www.rubyday.it', :target => :_blank, :class => 'footer-links-link'
-          %li= link_to tag_icon(:heart, 'blog'), 'http://www.rubyday.it/blog', :target => :_blank, :class => 'footer-links-link'
+          %li= link_to tag_icon(:home, 'web'), '/', :target => :_blank, :class => 'footer-links-link'
           %li= link_to tag_icon(:github, 'code'), 'https://github.com/rubydayit', :target => :_blank, :class => 'footer-links-link'
           %li= link_to tag_icon(:twitter, 'twitter'), 'http://twitter.com/rubydayit', :target => :_blank, :class => 'footer-links-link'
 

@@ -344,4 +344,19 @@ footer p {
     display: none;
   }
 }
+
+.nav.pull-left {
+    margin: 10px 0 0 15px;
+}
+
+.navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus {
+    background-color: black;
+    color: white;
+    font-variant: small-caps;
+    font-size: 1.3em;
+}
+
+.navbar .nav > .active > a:hover {
+    text-decoration: underline;
+}
 /* -- End Application -- */
