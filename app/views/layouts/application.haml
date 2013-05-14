@@ -21,6 +21,8 @@
           %ul.nav.pull-left
             %li{:class => "navbar-module #{('active' if request.path_info == '/')}"}
               =link_to 'Home', ConferenceSite2013::App.url(:root, :index)
+            %li{:class => "navbar-module #{('active' if request.path_info == '/venue')}"}
+              =link_to 'Venue', ConferenceSite2013::App.url(:venue, :index)
             %li{:class => "navbar-module #{('active' if request.path_info == '/sponsors')}"}
               =link_to 'Sponsors', ConferenceSite2013::App.url(:sponsors, :index)
 
