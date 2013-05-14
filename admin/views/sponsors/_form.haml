@@ -1,0 +1,37 @@
+- error = @sponsor.errors.key?(:name) && @sponsor.errors[:name].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :name, :class => 'control-label'
+  .controls
+    =f.text_field :name, :class => 'input-xlarge input-with-feedback', :autofocus => true
+    %span.help-inline=error ? f.error_message_on(:name, :class => 'text-error') : pat(:example)
+- error = @sponsor.errors.key?(:description) && @sponsor.errors[:description].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :description, :class => 'control-label'
+  .controls
+    =f.text_area :description, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:description, :class => 'text-error') : pat(:example)
+- error = @sponsor.errors.key?(:image_name) && @sponsor.errors[:image_name].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :image_name, :class => 'control-label'
+  .controls
+    =f.text_field :image_name, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:image_name, :class => 'text-error') : pat(:example)
+- error = @sponsor.errors.key?(:url) && @sponsor.errors[:url].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :url, :class => 'control-label'
+  .controls
+    =f.text_field :url, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:url, :class => 'text-error') : pat(:example)
+- error = @sponsor.errors.key?(:type) && @sponsor.errors[:type].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :type, :class => 'control-label'
+  .controls
+    =f.text_field :type, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:type, :class => 'text-error') : pat(:example)
+
+.form-actions
+  =f.submit pat(:save), :class => 'btn btn-primary'
+  &nbsp;
+  =f.submit pat(:save_and_continue), :class => 'btn btn-info', :name => 'save_and_continue'
+  &nbsp;
+  =link_to pat(:cancel), url(:sponsors, :index), :class => 'btn'

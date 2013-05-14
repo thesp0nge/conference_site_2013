@@ -1,0 +1,15 @@
+%div.sponsor-sidebar
+  -Sponsor::PLANS.each do |plan|
+    -sponsors = @sponsors.select {|s| s.type == plan }
+    -if sponsors.any?
+      %div.block
+        %div.well
+          %h3.sponsor
+            =plan.titleize
+            ='sponsor'.pluralize(sponsors.size)
+          %div
+            -sponsors.each do |sponsor|
+              %a{ href: sponsor.url, target: '_blank' }
+                %img.sponsor-logo{ src: "/images/sponsors/#{sponsor.image_name}" }
+  %p.lead
+    =link_to 'Interested in joining them?', '/sponsorship-prospectus.pdf'
