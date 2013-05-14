@@ -1,23 +1,21 @@
-%h2 RubyDay is possible thanks to our fantastic sponsors!
+%div.span12
+  %h2 RubyDay is possible thanks to our fantastic sponsors!
 
-%p.lead
-  Interested in sponsoring RubyDay 2013?
-  = link_to 'Download our sponsorship prospectus!', '/sponsorship-prospectus.pdf'
+  %p.lead
+    Interested in sponsoring RubyDay 2013?
+    =link_to 'Download our sponsorship prospectus!', '/sponsorship-prospectus.pdf'
 
--Sponsor::PLANS.each do |plan|
-  -sponsors = @sponsors.select {|s| s.type == plan }
-  -if sponsors.any?
-    %h3.sponsor
-      =plan.titleize
-    -sponsors.each do |sponsor|
-      %div.media
-        %div.pull-left
-          %a{ href: sponsor.url, target: '_blank' }
-            %img.sponsor-logo{ src: "/images/sponsors/#{sponsor.image_name}" }
-        %div.media-body
-          %h4.media-heading
-            = sponsor.name
-          = simple_format(sponsor.description).html_safe
-
-
-	
+  -Sponsor::PLANS.each do |plan|
+    -sponsors = @sponsors.select {|s| s.type == plan }
+    -if sponsors.any?
+      %h3.sponsor
+        =plan.titleize
+      -sponsors.each do |sponsor|
+        %div.media
+          %div.pull-left
+            %a{ href: sponsor.url, target: '_blank' }
+              %img.sponsor-logo{ src: "/images/sponsors/#{sponsor.image_name}" }
+          %div.media-body
+            %h4.media-heading
+              =sponsor.name
+            =simple_format(sponsor.description).html_safe
