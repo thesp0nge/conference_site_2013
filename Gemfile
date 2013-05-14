@@ -1,39 +1,21 @@
 source 'https://rubygems.org'
+ruby '2.0.0'
 
-# Distribute your app as a gem
-# gemspec
-
-# Server requirements
-# gem 'thin' # or mongrel
-# gem 'trinidad', :platform => 'jruby'
-
-# Optional JSON codec (faster performance)
-# gem 'oj'
+gem 'padrino', '0.11.1'
 
 # Project requirements
-gem 'rake'
-gem 'sass'
-gem 'compass'
+gem 'compass', '~> 0.12.2'
+gem 'rake', '~> 10.0.4'
 
 # Component requirements
-gem 'bcrypt-ruby', :require => 'bcrypt'
+gem 'bcrypt-ruby', '~> 3.0.1', require: 'bcrypt'
+gem 'data_mapper', '~> 1.2.0'
 gem 'haml', '> 4.0.0'
-gem 'dm-sqlite-adapter'
-gem 'data_mapper'
 
-# Test requirements
-gem 'rspec', :group => 'test'
-gem 'capybara', :group => 'test'
-gem 'cucumber', :group => 'test'
-gem 'rack-test', :require => 'rack/test', :group => 'test'
+group :development, :test do
+  gem 'dm-sqlite-adapter', '~> 1.2.0'
+end
 
-# Padrino Stable Gem
-gem 'padrino', '0.11.0'
-
-# Or Padrino Edge
-# gem 'padrino', :github => 'padrino/padrino-framework'
-
-# Or Individual Gems
-# %w(core gen helpers cache mailer admin).each do |g|
-#   gem 'padrino-' + g, '0.11.0'
-# end
+group :production do
+  gem 'dm-postgres-adapter', '~> 1.2.0'
+end
